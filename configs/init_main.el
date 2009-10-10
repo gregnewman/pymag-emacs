@@ -21,7 +21,3 @@
  
 ;; TAB => 4*'\b'
 (setq default-tab-width 4)
-
-;; line numbers
-(global-linum-mode 1)
-(setq column-number-mode  t)
