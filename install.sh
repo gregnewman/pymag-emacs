@@ -51,13 +51,12 @@ sudo rm -rf ropemode
 
 
 ## YASNIPPET 0.6.1c INSTALLATION
-curl -O http://yasnippet.googlecode.com/files/yasnippet-bundle-0.6.1c.el.tgz
-tar xzvf yasnippet-bundle-0.6.1c.el.tgz
-rm yasnippet-bundle-0.6.1c.el.tgz
+svn checkout http://yasnippet.googlecode.com/svn/trunk/ yasnippet
 
-## PYFLAKES INSTALL
+## PYFLAKES & FLYMAKE INSTALL
 svn co http://divmod.org/svn/Divmod/trunk/Pyflakes PyFlakes
 cd PyFlakes
 sudo python setup.py install
+ln -s `pwd`/bin/pyflakes /usr/local/bin
 cd ..
-sudo rm -rf PyFlakes
+#sudo rm -rf PyFlakes
