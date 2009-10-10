@@ -29,6 +29,22 @@
 (pymacs-load "ropemacs" "rope-")
 (setq ropemacs-enable-autoimport t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; YASnippet
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'yasnippet) ;; not yasnippet-bundle
+(setq yas/extra-mode-hooks '(python-mode-hook django-mode-hook))
+(setq yas/text-popup-function
+      'yas/dropdown-list-popup-for-template)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets/")
+
+(add-hook 'org-mode-hook
+          #'(lambda ()
+              (setq yas/fallback-behavior
+                    `(apply ,(lookup-key org-mode-map [tab])))
+              (local-set-key [tab] 'yas/expand)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Auto-completion
@@ -107,14 +123,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (when (load "flymake" t)
-  (defun flymake-pyflakes-init ()
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-		       'flymake-create-temp-inplace))
-	   (local-file (file-relative-name
-			temp-file
-			(file-name-directory buffer-file-name))))
-      (list "pyflakes" (list local-file))))
-  (add-to-list 'flymake-allowed-file-name-masks
-	       '("\\.py\\'" flymake-pyflakes-init)))
-(add-hook 'find-file-hook 'flymake-find-file-hook)
+   (defun flymake-pyflakes-init ()
+     (let* ((temp-file (flymake-init-create-temp-buffer-copy
+ 		       'flymake-create-temp-inplace))
+ 	   (local-file (file-relative-name
+ 			temp-file
+ 			(file-name-directory buffer-file-name))))
+       (list "pyflakes" (list local-file))))
+   (add-to-list 'flymake-allowed-file-name-masks
+ 	       '("\\.py\\'" flymake-pyflakes-init)))
+ (add-hook 'find-file-hook 'flymake-find-file-hook)
+
 (provide 'init_python)
