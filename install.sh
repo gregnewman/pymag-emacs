@@ -54,6 +54,9 @@ sudo rm -rf ropemode
 svn checkout http://yasnippet.googlecode.com/svn/trunk/ yasnippet
 
 ## PYFLAKES & FLYMAKE INSTALL
+cd ..
+mkdir tmp
+cd tmp
 svn co http://divmod.org/svn/Divmod/trunk/Pyflakes PyFlakes
 cd PyFlakes
 sudo python setup.py install
