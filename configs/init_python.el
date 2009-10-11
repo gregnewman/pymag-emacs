@@ -17,6 +17,8 @@
 	(smart-operator-mode-on)
 	))
 
+(setq ipython-command "/usr/local/bin/ipython")
+(require 'ipython)
 
 ;; pymacs
 (autoload 'pymacs-apply "pymacs")
@@ -133,5 +135,13 @@
    (add-to-list 'flymake-allowed-file-name-masks
  	       '("\\.py\\'" flymake-pyflakes-init)))
  (add-hook 'find-file-hook 'flymake-find-file-hook)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; DOCTEST MODE
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-to-list 'auto-mode-alist '("\\.doctest$" . doctest-mode))
+(autoload 'doctest-mode "doctest-mode" "doctest mode" t)
 
 (provide 'init_python)
