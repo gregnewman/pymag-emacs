@@ -15,5 +15,6 @@
 		  "init_main"))
 
 (require 'auto-complete)
+(require 'auto-complete-config)
 (require 'pymacs)
 (require 'flymake)
