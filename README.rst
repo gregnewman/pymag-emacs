@@ -11,15 +11,15 @@ Information:
 Feature/Plugins:
 ----------------
 
-Pymacs
-Rope
-Ropemacs
-YASnippet
-Auto-complete
-Python-mode
-doctests-mode
-PyFlakes
-Flymake
+* Pymacs
+* Rope
+* Ropemacs
+* YASnippet
+* Auto-complete
+* Python-mode
+* doctests-mode
+* PyFlakes
+* Flymake
 
 Optional Installer Script
 -------------------------
