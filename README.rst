@@ -1,9 +1,6 @@
 Emacs Python Starter Configuration
 ==================================
 
-Information:
-------------
-
 * Project by Greg Newman <greg@20seven.org>
 * Website: http://20seven.org/
 * Version: 1.0 (09/27/2009)
