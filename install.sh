@@ -63,3 +63,15 @@ sudo python setup.py install
 ln -s `pwd`/bin/pyflakes /usr/local/bin
 cd ..
 #sudo rm -rf PyFlakes
+
+## CEDET INSTALLATION
+cvs -d:pserver:anonymous@cedet.cvs.sourceforge.net:/cvsroot/cedet login
+cvs -z3 -d:pserver:anonymous@cedet.cvs.sourceforge.net:/cvsroot/cedet co -P cedet
+cd cedet
+make EMACS=emacs
+cd ..
+
+## ECB INSTALLATION
+curl -O http://ecb.sourceforge.net/cvs_snapshots/ecb.tar.gz
+tar xzvf ecb.tar.gz
+rm ecb.tar.gz
