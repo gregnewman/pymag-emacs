@@ -18,6 +18,8 @@ Feature/Plugins:
 * doctests-mode
 * PyFlakes
 * Flymake
+* ECB
+* CEDET
 
 Optional Installer Script
 -------------------------
